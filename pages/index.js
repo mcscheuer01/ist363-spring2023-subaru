@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import CarColorPicker from "../components/CarColorPicker";
 import Header from "../components/Header";
 import Image from "next/image";
 import Layout from "../components/Layout";
@@ -24,17 +25,9 @@ export async function getStaticProps() {
 const Homepage = ({data, colors}) => {
   console.log({data})
   return <Layout>
+    <CarColorPicker colors={colors}/>
     <Header />
     <h1>Homepage</h1>
-    <h2>Color Picker</h2>
-    <div>Large image goes here.
-    </div>
-    <ul>
-        {colors.map((color) => {
-          return <li>{color.name}</li>
-        })}
-    </ul>
-    <h3>Color name</h3>
   </Layout>
 }
 export default Homepage
