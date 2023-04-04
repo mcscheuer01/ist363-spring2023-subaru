@@ -1,5 +1,19 @@
+@use "../sass/abstracts/vars";
+
 .swatches {
     padding: 0;
     margin: 0;
     display: flex;
+    .swatch {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+        background-color: grey;
+        &.active {
+            border: 2px solid limegreen;
+        }
+    }
 }
+

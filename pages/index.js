@@ -3,7 +3,10 @@ import CarColorPicker from "../components/CarColorPicker";
 import Header from "../components/Header";
 import Image from "next/image";
 import Layout from "../components/Layout";
+import LocationPicker from "../components/LocationPicker";
 import Swatch from "../components/Swatch";
+import SectionCTA from "../components/SectionCTA";
+import Showcase from "../components/Showcase";
 
 import { getAllVehicles, getAllColors } from '../lib/api';
 
@@ -25,7 +28,10 @@ export async function getStaticProps() {
 const Homepage = ({data, colors}) => {
   console.log({data})
   return <Layout>
+    <Showcase />
+    <LocationPicker />
     <CarColorPicker colors={colors}/>
+    <SectionCTA />
     <Header />
     <h1>Homepage</h1>
   </Layout>
