@@ -1,3 +1,5 @@
+import Heading from "./Heading";
+
 import styles from "./sectioncta.module.scss";
 
 const SectionCTA = () => {
