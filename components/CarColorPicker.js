@@ -21,6 +21,7 @@ const CarColorPicker = ({ colors }) => {
         <Swatches 
         colors={colors}
         clickHandler={setActiveColor}
+        activeColor = {activeColor}
         />
         <h3>{activeColor.name}</h3>
     </div>

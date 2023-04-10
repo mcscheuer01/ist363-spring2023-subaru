@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import Image from "next/image";
 import Layout from "../components/Layout";
 import LocationPicker from "../components/LocationPicker";
-import Swatch from "../components/Swatch";
 import SectionCTA from "../components/SectionCTA";
 import Showcase from "../components/Showcase";
 
