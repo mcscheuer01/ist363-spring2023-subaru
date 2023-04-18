@@ -19,18 +19,34 @@ export async function getStaticPaths() {
     };
   }  
 
-  export async function getStaticProps({ params }) {
-    const slug = params.id;
-    // Get external data from the file system, API, DB, etc.
-    const data = getSingleVehicleBySlug(slug);
   
-    // The value of the `props` key will be
-    //  passed to the `Home` component
+  export async function getStaticProps({ params }) {
+    const { id } = params;
+    console.log({id});
+    const vehicleData = await getVehicleDataBySlug(id);
     return {
+      // Passed to the page component as props
       props: {
-        data
-      }
+        vehicleData
+      },
     }
+  }
+
+  export default function SingleVehiclePage({ vehicleData }) {
+    const { title, featuredImage } = vehicleData;
+    return ( 
+      <div>
+      <h1>{title}</h1>
+      {featuredImage && (
+        <Image
+        src={featuredImage.node.sourceUrl}
+        alt={featuredImage.node.altText}
+        width={featuredImage.node.mediaDetails.width}
+        height={featuredImage.node.mediaDetails.height}
+        />
+     )}
+    </div>
+    );
   }
 
 const SingleCarTemplate =  ({ data }) => {

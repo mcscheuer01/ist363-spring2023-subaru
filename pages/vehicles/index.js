@@ -5,17 +5,15 @@ import Link from "next/link";
 import { getAllVehicles } from "../../lib/api";
 
 export async function getStaticProps() {
-  // Get external data from the file system, API, DB, etc.
-  const data = getAllVehicles()
-
-  // The value of the `props` key will be
-  //  passed to the `Home` component
+  const vehiclesData = await getAllVehicles();
   return {
     props: {
-      data
-    }
-  }
+      vehiclesData
+      }
+    };
 }
+
+  // Get external data from the file system, API, DB, etc.
 
 const VehiclesPage = ({ data }) => {
     return <Layout>
