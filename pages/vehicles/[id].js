@@ -37,33 +37,6 @@ export async function getStaticPaths() {
     return ( 
       <div>
       <h1>{title}</h1>
-      {featuredImage && (
-        <Image
-        src={featuredImage.node.sourceUrl}
-        alt={featuredImage.node.altText}
-        width={featuredImage.node.mediaDetails.width}
-        height={featuredImage.node.mediaDetails.height}
-        />
-     )}
     </div>
     );
   }
-
-const SingleCarTemplate =  ({ data }) => {
-    const { model, slug } = data;
-    return <Layout>
-    <h4>
-        <Link href="/vehicles">
-            &laquo; Back to Vehicles Page
-        </Link>
-    </h4>
-        <h1>{model}</h1>
-        <Image
-            src={`/vehicles/${slug}/medium.webp`}
-            alt={`${model} car`}
-            width={350}
-            height={185}
-            />
-    </Layout>
-}
-export default SingleCarTemplate
