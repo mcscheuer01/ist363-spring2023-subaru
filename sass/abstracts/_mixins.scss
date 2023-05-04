@@ -50,3 +50,14 @@
 	// error warn if string does not match or it is not a length
 	
 }
+
+@mixin textAligns() {
+	$textAligns: left, center, right;
+
+	@each $textAlign in $textAligns {
+		&.text-align-#{$textAlign} {
+			text-align: $textAlign;
+		}
+}
+}
+

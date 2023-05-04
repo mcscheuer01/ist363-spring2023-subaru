@@ -1,18 +1,22 @@
+import Container from "../../components/Container";
 import Image from "next/image";
 import Layout from "../../components/Layout";
-import Link from "next/link";
+import Showcase from "../../components/Showcase";
+import TrimPicker from "../../components/TrimPicker";
 
-import { getAllCarSlugs, getSingleVehicleBySlug } from "../../lib/api.js";
+import { getAllVehicleSlugs, getVehicleDataBySlug } from "../../lib/api";
 
 export async function getStaticPaths() {
-    const slugs = getAllCarSlugs();
-    const paths = slugs.map(slug => {
+    const vehicles = await getAllVehicleSlugs();
+    //console.log({vehicles});
+    const paths = vehicles.map((vehicle) => {
           return {
               params: {
-                  id: slug,
+                  id: vehicle.node.slug
               }
           }
     })
+
     return {
       paths,
       fallback: false,
@@ -33,10 +37,17 @@ export async function getStaticPaths() {
   }
 
   export default function SingleVehiclePage({ vehicleData }) {
-    const { title, featuredImage } = vehicleData;
-    return ( 
-      <div>
-      <h1>{title}</h1>
-    </div>
-    );
+    const { title, featuredImage, vehicleInformation } = vehicleData;
+    const { trimLevels, showcase } = vehicleInformation;
+    // console.log({trimLevels});
+    return <Layout>
+    <Showcase 
+      subheadline={`Subaru ${title}`}
+      headline={showcase.headline ? showcase.headline : null}
+      backgroundImage={featuredImage ? featuredImage.node : null}
+    />
+    <Container>
+      <TrimPicker trimLevels={trimLevels} />
+    </Container>
+    </Layout>
   }
