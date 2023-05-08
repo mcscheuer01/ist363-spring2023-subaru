@@ -15,6 +15,7 @@ const Heading = ({
         [`text-align-${textAlign}`] : textAlign
     });
 
-    return <Tag>{children}</Tag>
+    return <Tag className={headingClasses}>
+        {children}</Tag>
 }
 export default Heading;
