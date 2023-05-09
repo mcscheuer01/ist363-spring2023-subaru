@@ -7,7 +7,7 @@ import Paragraph from "./Paragraph";
 
 import styles from "./grid.module.scss";
 
-import { convertPriceToFormattedString } from "../lib/utilities/";
+import { convertPriceToFormattedString } from "../lib/utilities";
 
 const Grid = ({ items, activeItem }) => {
     let sectionVariants = {
@@ -19,7 +19,7 @@ const Grid = ({ items, activeItem }) => {
             }
         }
     }
-    const item = {
+    const itemVariants = {
         hidden: { y: 50, opacity: 0 },
         show: { y: 0, opacity: 1 }
     }

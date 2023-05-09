@@ -19,7 +19,7 @@ const Tabs = ({
             return <li 
             key={`tabItem${index}`}
             className={tabItemClasses}
-            onclick={() => {
+            onClick={() => {
                 changeHandler(item);
             }}
             >{item}</li>

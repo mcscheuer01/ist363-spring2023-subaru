@@ -1,4 +1,4 @@
-import {motion, AnimatePresent } from "framer-motion";
+import {motion, AnimatePresence } from "framer-motion";
 import chroma from "chroma-js";
 import classnames from "classnames/bind";
 import { useState } from "react";

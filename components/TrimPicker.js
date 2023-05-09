@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion"
 
 // components
-import FormGroup from "FormGroup";
+import FormGroup from "./FormGroup";
 import Heading from "./Heading";
 import Image from "next/image";
 import Label from "./Label";
@@ -53,7 +53,7 @@ const TrimPicker = ({ trimLevels }) => {
                     className={styles.trimpicker_background_wrapper}
                 >
                     <Image 
-                        src={`/backgrounds/sweries-background-${parseInt(activeBackgroundIndex)+1}.jpg`}
+                        src={`/backgrounds/series-background-${parseInt(activeBackgroundIndex)+1}.jpg`}
                         alt={backgroundImages[activeBackgroundIndex].name}
                         width={1900}
                         height={656}

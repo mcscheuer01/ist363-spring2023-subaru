@@ -27,7 +27,7 @@ const VehiclesPage = ({ vehiclesData }) => {
     
     const filteredVehicles = vehiclesData.filter((vehicle) => {
         const { vehicleTypes } = vehicle.node.vehicleInformation;
-        return activeVehicle === "all" || vehicleTypes.includes(activeVehicleType)
+        return activeVehicleType === "all" || vehicleTypes.includes(activeVehicleType)
     });
 
     return (

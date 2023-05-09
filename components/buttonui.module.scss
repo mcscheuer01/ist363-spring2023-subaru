@@ -6,7 +6,7 @@
     background-color: transparent;
     border: 0;
     &.icon-menu {
-        @include mixins.breakpoint(){
+        @include mixins.breakpoint(laptop){
             display: none;
         }
     }

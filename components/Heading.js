@@ -11,7 +11,7 @@ const Heading = ({
 
     const headingClasses = cx({
         heading: true,
-        [`h${level}`] : level,
+        [`heading${level}`] : level,
         [`text-align-${textAlign}`] : textAlign
     });
 

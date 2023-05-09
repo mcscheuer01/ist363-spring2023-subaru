@@ -1,7 +1,7 @@
 @use "../sass/abstracts/mixins";
 
 .grid {
-    background-color: aqua;
+    // background-color: aqua;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -16,7 +16,7 @@
             width: calc(100%/3);
         }
         .gridItemImage {
-            background-color: pink;
+            // background-color: pink;
             width: 100%;
             height: auto;
         }
